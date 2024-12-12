@@ -7,19 +7,20 @@
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel" src="app.jsx"></script>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header>
-      <img src="images/Pokémon_GO_logo.svg.png" alt="Pokemon GO" />
+      <img src="images/logo.png" alt="Pokemon GO" />
       <div id="search_container">
         <input type="text" id="search" placeholder="Wpisz nazwę Pokemona..." />
         <button id="search-button">Szukaj</button>
       </div>
     </header>
     <main>
-      <div id="root"></div>
+      <div id="root-details"></div>
+      <div id="root-list"></div>
     </main>
-    <script type="text/babel" src="app.jsx"></script>
   </body>
 </html>
