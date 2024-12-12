@@ -16,7 +16,7 @@ function DisplayPokemons({ pokemons }) {
   return (
     <div id="pokemon-list">
       {pokemons.map((pokemon, index) => (
-        <div key={index} className="pokemon-card" onClick={() => details_on_click(index)}>
+        <div key={index} className="pokemon-card" onClick={() => details_on_click(index + 1)}>
           <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png`} alt={pokemon.name} className="pokemon-image"></img>
           <h3 className="pokemon-name">{pokemon.name}</h3>
         </div>
@@ -39,7 +39,7 @@ async function getDetailsForPokemon(id) {
   }
 }
 function DisplayPokemonDetails({ pokemon_details, id }) {
-  const img = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id + 1}.png`;
+  const img = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
   if (pokemon_details) {
     const name = pokemon_details.name;
     let type = "";
@@ -58,7 +58,7 @@ function DisplayPokemonDetails({ pokemon_details, id }) {
     return (
       <div key={id} id="pokemon-details-container">
         <div className="pokemon-details">
-          <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id + 1}.png`} alt={name} className="pokemon-image"></img>
+          <img src={img} alt={name} className="pokemon-image"></img>
           <h3 className="pokemon-name">{name}</h3>
           <h4 className="typy">typy: {type}</h4>
           <h4 className="statystyki">
@@ -71,14 +71,22 @@ function DisplayPokemonDetails({ pokemon_details, id }) {
     );
   }
 }
+function DisplayLoader({}) {
+  return (
+    <div className="loader-container">
+      <div className="loader"></div>
+    </div>
+  );
+}
 const detailsRoot = ReactDOM.createRoot(document.getElementById("root-details"));
-
+const ListRoot = ReactDOM.createRoot(document.getElementById("root-list"));
 async function details_on_click(id) {
   const pokemon_details = await getDetailsForPokemon(id);
   detailsRoot.render(<DisplayPokemonDetails pokemon_details={pokemon_details} id={id} />);
 }
 async function renderApp() {
+  ListRoot.render(<DisplayLoader />);
   const pokemons = await getPokemons();
-  ReactDOM.createRoot(document.getElementById("root-list")).render(<DisplayPokemons pokemons={pokemons} />);
+  ListRoot.render(<DisplayPokemons pokemons={pokemons} />);
 }
 renderApp();
