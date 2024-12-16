@@ -71,6 +71,7 @@ function DisplayPokemonDetails({ pokemon_details, id }) {
     );
   }
 }
+
 function DisplayLoader({}) {
   return (
     <div className="loader-container">

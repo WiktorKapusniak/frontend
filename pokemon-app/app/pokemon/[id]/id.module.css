@@ -1,0 +1,61 @@
+.pokemonDetailsContainer {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.pokemonDetails {
+  background-color: #e2e2e2;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: center;
+  color: rgb(80, 80, 80);
+  font-weight: bold;
+}
+
+.pokemonImage {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  margin-bottom: 0px;
+}
+
+.pokemon-name,
+.typy,
+.statystyki,
+.wzrost,
+.waga {
+  font-size: 16px;
+  margin: 8px 0;
+  color: rgb(80, 80, 80);
+  font-weight: bold;
+}
+.loaderContainer {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+.loader {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

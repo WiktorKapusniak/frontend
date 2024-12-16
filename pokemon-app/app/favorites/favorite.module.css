@@ -1,0 +1,39 @@
+.pokemonCard,
+.favoriteCard {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button {
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.button:hover {
+  background-color: #005bb5;
+}
+.favorites {
+  color: black;
+  font-size: 40px;
+  font-weight: bold;
+  color: rgb(66, 172, 172);
+  display: flex;
+  justify-content: center;
+}
+.noFavorites {
+  color: black;
+  font-size: 30px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
